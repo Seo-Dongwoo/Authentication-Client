@@ -1,0 +1,10 @@
+.ListContainer {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.ListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
