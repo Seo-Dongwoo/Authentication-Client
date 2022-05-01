@@ -1,10 +1,51 @@
-.ListContainer {
-  text-align: center;
-  padding-top: 150px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.ListHeader {
-  display: flex;
+.container {
+  width: 1000px;
+  margin: 150px auto;
   align-items: center;
   justify-content: center;
+}
+
+.post-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.post-title {
+  padding-right: 20px;
+  font-size: 3rem;
+  margin: auto 0;
+}
+
+.add-button {
+}
+
+.post-container {
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  width: 200px;
+  padding-bottom: 20px;
+  padding-right: 30px;
+}
+
+.btn-container {
+}
+
+.update-link {
+  padding-right: 30px;
+}
+
+.delete-button {
 }

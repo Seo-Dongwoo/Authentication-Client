@@ -1,37 +1,38 @@
 import React, { useState, useEffect } from "react";
-import "../css/AddPost.css";
+import "../css/UpdatePost.css";
 import axios from "axios";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 
 const UpdatePost = () => {
-  const [data, setData] = useState({
+  const { id } = useParams();
+  const history = useHistory();
+
+  const [post, setPost] = useState({
     name: "",
     title: "",
     description: "",
   });
 
-  const [isSubmit, setIsSubmit] = useState(false);
-
-  const history = useHistory();
+  useEffect(() => {
+    loadUser();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setData({ ...data, [name]: value });
+    setPost({ ...post, [name]: value });
+    console.log(post);
   };
 
-  const handleSubmit = async (e, _id) => {
+  const updateHandler = async (e) => {
     e.preventDefault();
-    setIsSubmit(true);
-    try {
-      const res = await axios.put(
-        `http://localhost:3000/api/posts/${_id}`,
-        data
-      );
-      console.log(res);
-      history.push("/");
-    } catch (error) {
-      console.log(error);
-    }
+    const res = await axios.put(`http://localhost:3000/api/posts/${id}`, post);
+    history.push("/");
+    console.log(res);
+  };
+
+  const loadUser = async () => {
+    const res = await axios.get(`http://localhost:3000/api/posts/${id}`);
+    setPost(res);
   };
 
   return (
@@ -81,7 +82,7 @@ const UpdatePost = () => {
           <button
             type="submit"
             className="form-input-btn"
-            onClick={handleSubmit}
+            onClick={(id) => updateHandler(id)}
           >
             등록
           </button>

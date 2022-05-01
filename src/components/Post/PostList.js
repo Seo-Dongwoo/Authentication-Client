@@ -40,36 +40,29 @@ const PostList = () => {
   };
 
   return (
-    <div className="ListContainer">
-      <div className="ListHeader">
-        <h1 className="PostTitle">게시판</h1>
-        <button className="Add-btn">
+    <div className="container">
+      <div className="post-header">
+        <h1 className="post-title">게시판</h1>
+        <button className="add-button">
           <Link to="/addpost">추가</Link>
         </button>
       </div>
-      <ListGroup className="mt-4">
+      <ListGroup className="post-container ">
         {postList &&
           postList.map((data) => {
             return (
-              <ListGroupItem
-                className="d-flex"
-                style={{ justifyContent: "space-between" }}
-                key={data._id}
-              >
-                <strong style={{ paddingTop: "6px" }}>{data.name}</strong>
-                <strong style={{ paddingTop: "6px" }}>{data.title}</strong>
-                <strong style={{ paddingTop: "6px" }}>
-                  {data.description}
-                </strong>
-                <div className="ml-auto">
-                  <Link
-                    className="btn btn-warning "
-                    style={{ marginRight: "5px" }}
-                    to="/updatepost"
-                  >
+              <ListGroupItem className="items" key={data._id}>
+                <strong className="item">{data.name}</strong>
+                <strong className="item">{data.title}</strong>
+                <strong className="item">{data.description}</strong>
+                <div className="btn-container">
+                  <Link className="update-link" to={`/updatepost/${data._id}`}>
                     변경
                   </Link>
-                  <Button onClick={() => deletePosts(data._id)} color="danger">
+                  <Button
+                    className="delete-button"
+                    onClick={() => deletePosts(data._id)}
+                  >
                     삭제
                   </Button>
                 </div>

@@ -13,7 +13,7 @@ const NextLoginHome = () => {
         <Switch>
           <Route path="/" exact component={PostList} />
           <Route path="/addpost" exact component={AddPost} />
-          <Route path="/updatepost" exact component={UpdatePost} />
+          <Route path="/updatepost/:id" exact component={UpdatePost} />
         </Switch>
       </Router>
     </>
