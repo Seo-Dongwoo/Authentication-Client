@@ -25,12 +25,10 @@ const AddPost = () => {
     setIsSubmit(true);
     const { name, title, description } = data;
     if (name && title && description) {
-      const res = await axios
-        .post("http://localhost:3000/api/posts", data)
-        .then((res) => {
-          history.push("/");
-          console.log(res);
-        });
+      await axios.post("http://localhost:3000/api/posts", data).then((res) => {
+        history.push("/");
+        console.log(res);
+      });
     } else {
       alert("에러");
     }

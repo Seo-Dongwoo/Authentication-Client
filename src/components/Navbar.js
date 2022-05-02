@@ -19,14 +19,14 @@ export default function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               ChainLink
             </Link>
           </Typography>
           {user ? (
             <>
               <Button color="inherit" onClick={handleLogout}>
-                <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                <Link style={{ textDecoration: "none", color: "white" }}>
                   로그아웃
                 </Link>
               </Button>
@@ -36,7 +36,7 @@ export default function Navbar() {
               <Button color="inherit">
                 <Link
                   to="/login"
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   로그인
                 </Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
               <Button color="inherit">
                 <Link
                   to="/signup"
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   회원가입
                 </Link>

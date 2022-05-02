@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../css/Login.css";
 
-const Login = ({ setLoginUser }) => {
+const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -23,8 +23,9 @@ const Login = ({ setLoginUser }) => {
     setIsSubmit(true);
     try {
       const url = "http://localhost:3000/api/user/login";
-      const { data: res } = await axios.post(url, user);
-      localStorage.setItem("token", res.data);
+      const res = await axios.post(url, user);
+      localStorage.setItem("token", res);
+      console.log(res);
       window.location = "/";
     } catch (error) {
       console.log(error);
