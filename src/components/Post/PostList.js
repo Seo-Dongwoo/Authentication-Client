@@ -43,9 +43,12 @@ const PostList = () => {
     <div className="container">
       <div className="post-header">
         <h1 className="post-title">게시판</h1>
-        <button className="add-button">
-          <Link to="/addpost">추가</Link>
-        </button>
+      </div>
+      <div className="items-category">
+        <p className="category-name">이름</p>
+        <p className="category-name">제목</p>
+        <p className="category-name">내용</p>
+        <p className="category-name">변경 및 삭제</p>
       </div>
       <ListGroup className="post-container ">
         {postList &&
@@ -70,6 +73,13 @@ const PostList = () => {
             );
           })}
       </ListGroup>
+      <div className="post-footer">
+        <button className="add-button">
+          <Link to="/addpost" className="add-link">
+            등록
+          </Link>
+        </button>
+      </div>
     </div>
   );
 };

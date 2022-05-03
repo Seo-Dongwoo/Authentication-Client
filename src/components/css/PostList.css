@@ -4,9 +4,12 @@
 }
 
 .container {
-  width: 1000px;
+  width: 1200px;
+  height: 900px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   margin: 150px auto;
   align-items: center;
+  padding-top: 40px;
   justify-content: center;
 }
 
@@ -18,18 +21,57 @@
 }
 
 .post-title {
-  padding-right: 20px;
   font-size: 3rem;
   margin: auto 0;
 }
 
+.post-footer {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+
+  bottom: 0;
+}
+
 .add-button {
+  background: none;
+  width: 120px;
+  height: 60px;
+  color: black;
+}
+
+.add-button:hover {
+  border: 0;
+}
+
+.add-link {
+  text-decoration-line: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.items-category {
+  justify-content: center;
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.category-name {
+  width: 200px;
+  padding-left: 50px;
+  font-size: 20px;
+  color: black;
 }
 
 .post-container {
 }
 
 .items {
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 }
@@ -41,11 +83,28 @@
 }
 
 .btn-container {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .update-link {
-  padding-right: 30px;
+  padding-right: 40px;
+  text-decoration: none;
+  color: black;
+}
+
+.update-link:hover {
+  color: gray;
 }
 
 .delete-button {
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.delete-button:hover {
+  color: gray;
 }

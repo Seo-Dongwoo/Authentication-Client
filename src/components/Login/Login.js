@@ -17,13 +17,19 @@ const Login = () => {
     setUser({ ...user, [name]: value });
   };
 
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormErrors(validate(user));
     setIsSubmit(true);
     try {
       const url = "http://localhost:3000/api/user/login";
-      const res = await axios.post(url, user);
+      const res = await axios.post(url, user, config);
       localStorage.setItem("token", res);
       console.log(res);
       window.location = "/";
