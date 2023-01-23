@@ -1,29 +1,41 @@
-# authentication Client
-## 프로젝트 목적 및 설명
+# Authentication Client
+## 📄 프로젝트 목적 및 설명
 * ### 목적
   * Server와 DataBase를 연결하여 로그인 로그아웃 app 구현
   * 로그인한 유저의 게시물 CRUD 기능 구현
 * ### 설명
-  * #### 로그인 페이지
-    * 
   * #### 회원가입 페이지
-  
-개발 기간 및 사용 기술
+    * 유저의 data를 axios와 async/await를 이용해서 서버와 비동기 통신
+    * 유효성 검사 실시
+  * #### 로그인 페이지
+    * 유저의 data를 axios와 async/await를 이용해서 서버와 비동기 통신
+    * 유효성 검사 실시
+  * #### Post 페이지
+    * 서버와 비동기 통신을 해서 게시물 CRUD
 ---
-- 개발 기간 : 20222.04.20 ~ 2022.05.04 (약 2주)
-- 사용 기술 : Javascript, React, Material-UI, Axios
+## 🛠 개발 기간 및 사용 기술
 
-집중적으로 공부 한 것
+- **개발 기간** : 20222.04.20 ~ 2022.05.04 (약 2주)
+* **사용 기술** 
+
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <br />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"/>
+  <img src="https://img.shields.io/badge/mui-007FFF?style=for-the-badge&logo=mui&logoColor=white"/>
 ---
+ ## 🤩 새로 배우거나 집중적으로 공부한 것
+
 - Axios를 이용하여 서버와의 통신
 - useState와 useEffect를 사용한 상태관리
 - Router를 이용한 페이지 이동
 - 로그인하면 token을 갖고 로그아웃하면 token을 삭제
-- 게시물 CRUD
+- 서버와 통신하여 게시물 CRUD
 
-경험했던 문제점
----
-- 서버 API 통신의 문제점..😥 하지만 데이터의 id 값을 정확하게 받아와서 문제점 극복
+## 😥 경험했던 문제점
+
+- 서버 API 통신의 문제점.. 하지만 데이터의 id 값을 정확하게 받아와서 문제점 극복
 ```
  const updateHandler = async (e) => {
     e.preventDefault();
@@ -113,7 +125,3 @@ const validate = (values) => {
     return errors;
   };
 ```
-
-배포
----
-https://fabulous-caramel-1386d3.netlify.app
